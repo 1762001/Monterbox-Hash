@@ -14,7 +14,7 @@
     <!-- favicon -->
     <link rel="apple-touch-icon" href="apple-touch-icon.html">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/font-awesome.min.css">
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/icon.png' %}">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/Background.svg' %}">
     <!-- bootstrap v4 css -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
     <!-- font-awesome css -->
@@ -40,7 +40,7 @@
     <!-- rsanimations CSS -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/rsanimations.css' %}">
     <!-- style css -->
-    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
     <!-- rs-spaceing css -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/rs-spaceing.css' %}">
     <!-- responsive css -->
@@ -69,7 +69,7 @@
                     <div class="row rs-vertical-middle">
                         <div class="col-lg-2">
                             <div class="logo-area">
-                                <a href="/client_page/home"><img src="{% static 'images/client_logo.png' %}" alt="logo"></a>
+                                <a href="/client_page/home"><img class="logo" src="../static/images/new_logo.png" alt="logo"></a>
                             </div>
                         </div>
                         <div class="col-lg-10 mobile-menu-area">
@@ -166,7 +166,7 @@
             <nav class="right_menu_togle hidden-md">
                 <div class="close-btn"><span id="nav-close" class="text-center"><i class="flaticon-cross"></i></span></div>
                 <div class="canvas-logo">
-                    <a href="/client_page/home"><img src="{% static 'images/client_logo2.png' %}" alt="logo"></a>
+                    <a href="/client_page/home"><img src="{% static 'images/new_logo.png' %}" alt="logo"></a>
                 </div>
                 <div class="sidebarnav_menu">
                     <ul>
@@ -543,57 +543,84 @@
         </div>
     </div>
     <!-- Top Products End -->
-
+    <div class="music">
+        <iframe  src="https://open.spotify.com/embed/artist/23Mfhfnb8nWudPtyzEO6F4?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+    </div>
     <!-- Footer Start -->
-    <footer id="rs-footer" class="rs-footer pt-137 md-pt-70 sm-pt-65">
+    <footer id="rs-footer" class="rs-footer pt-80 md-pt-70 sm-pt-65">
+        <h2 style="text-align: center; color: white;">News & Events</h2>
         <!-- Sponsor Logo Section Start -->
         <div class="rs-sponsor pb-35 md-pb-60 sm-pb-50">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 offset-lg-2 col-md-8 offset-md-2">
-                        <div class="row">
-                            <div class="col-lg-3 col-md-4 col-6">
-                                <div class="logos">
-                                    <a href="#"><img src="{% static 'images/sponsor/1.png' %}" alt=""></a>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-6">
-                                <div class="logos">
-                                    <a href="#"><img src="{% static 'images/sponsor/2.png' %}" alt=""></a>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-6">
-                                <div class="logos">
-                                    <a href="#"><img src="{% static 'images/sponsor/3.png' %}" alt=""></a>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-6">
-                                <div class="logos">
-                                    <a href="#"><img src="{% static 'images/sponsor/4.png' %}" alt=""></a>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-6">
-                                <div class="logos">
-                                    <a href="#"><img src="{% static 'images/sponsor/5.png' %}" alt=""></a>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-6">
-                                <div class="logos">
-                                    <a href="#"><img src="{% static 'images/sponsor/6.png' %}" alt=""></a>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-6">
-                                <div class="logos">
-                                    <a href="#"><img src="{% static 'images/sponsor/7.png' %}" alt=""></a>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-6">
-                                <div class="logos">
-                                    <a href="#"><img src="{% static 'images/sponsor/8.png' %}" alt=""></a>
-                                </div>
-                            </div>
+                <div  style="justify-content: space-around;" class="row">
+                    <div class="card" style="width: 18rem;">
+                        <img src="https://s3-eu-central-1.amazonaws.com/www-staging.esports.com/wp-media-folder-esports-com/app/uploads/2022/04/wireless-gaming-headsets-affiliates-709x405.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Gaming Gear</h5>
+                          <p class="card-text">Wireless Gaming Headsets are popular as you get to skip out on the cables to your PC or console.</p>
+                          <a href="https://www.esports.com/en/gaming-gear-the-5-best-wireless-headsets-compared-341793" class="btn btn-primary">More</a>
                         </div>
-                    </div>
+                      </div>
+                      <div class="card" style="width: 18rem;">
+                        <img src="https://s3-eu-central-1.amazonaws.com/www-staging.esports.com/WP%20Media%20Folder%20-%20esports-com//var/app/current/web/app/uploads/2021/03/Activision-Blizzard-lay-off-50-people-restructure-live-events-720x405.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Activision Blizzard</h5>
+                          <p class="card-text">Things seemingly keep getting worse for Activision Blizzard, as another employee has now sued them for sexual harassment and discrimination.</p>
+                          <a href="https://www.esports.com/en/new-lawsuit-for-activision-blizzard-as-female-employee-alleges-sexual-harassment-338726" class="btn btn-primary">More</a>
+                        </div>
+                      </div>
+                      <div class="card" style="width: 18rem;">
+                        <img src="https://s3-eu-central-1.amazonaws.com/www-staging.esports.com/wp-media-folder-esports-com/app/uploads/2022/03/New-Witcher-game-in-development-720x405.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">New Witcher Game</h5>
+                          <p class="card-text">CD Projekt Red has announced that they’re working on a new game in the Witcher series, entering a new era for the franchise.</p>
+                          <a href="https://www.esports.com/en/cd-projekt-red-announces-new-witcher-game-is-being-developed-337731" class="btn btn-primary">More</a>
+                        </div>
+                      </div>
+                      <div class="card" style="width: 18rem;">
+                        <img src="https://s3-eu-central-1.amazonaws.com/www-staging.esports.com/wp-media-folder-esports-com/app/uploads/2022/03/elden-ring-endings.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Elden Ring</h5>
+                          <p class="card-text">There are six different Endings in Elden Ring. Here are how to unlock the different Ages in the grand finale of Elden Ring.
+
+                        </p>
+                          <a href="https://www.esports.com/en/elden-ring-how-to-unlock-all-endings-337547" class="btn btn-primary">More</a>
+                        </div>
+                      </div>
+                    <!-- <div class="col-lg-8 offset-lg-2 col-md-8 offset-md-2" style="">
+                        <div class="row slideshow-container">
+                            <div class="mySlides fade1" style="margin-left: 15%;">
+                                <div class="logos" style="width: 600px;">
+                                  
+                                    <img style="width:600px ;"  src="https://s3-eu-central-1.amazonaws.com/www-staging.esports.com/wp-media-folder-esports-com/app/uploads/2022/03/Secret-Vault-Warzone-Rebirth-Island-720x405.jpg" alt="">
+                                </div>
+                                <div class="heading_news">
+                                    <h2 class="pt-20" style="color: white;text-align: center;">CALL OF DUTY : SECRET VAULT ?</h2>
+                                </div>
+                            </div> -->
+                            <!-- <div class="mySlides fade1" style="margin-left: 15%;">
+                                <div class="logos" style="width: 600px;">
+                                  
+                                    <img style="width:600px ;"  src="https://s3-eu-central-1.amazonaws.com/www-staging.esports.com/wp-media-folder-esports-com/app/uploads/2022/03/Secret-Vault-Warzone-Rebirth-Island-720x405.jpg" alt="">
+                                </div>
+                                <div class="heading_news">
+                                    <h2 class="pt-20" style="color: white;text-align: center;">CALL OF DUTY : SECRET VAULT ?</h2>
+                                </div>
+                            </div>
+                            <div class="mySlides fade1" style="margin-left: 15%;">
+                                <div class="logos" style="width: 600px;">
+                                  
+                                    <img style="width:600px ;"  src="https://s3-eu-central-1.amazonaws.com/www-staging.esports.com/wp-media-folder-esports-com/app/uploads/2022/03/Secret-Vault-Warzone-Rebirth-Island-720x405.jpg" alt="">
+                                </div>
+                                <div class="heading_news">
+                                    <h2 class="pt-20" style="color: white;text-align: center;">CALL OF DUTY : SECRET VAULT ?</h2>
+                                </div>
+                            </div> -->
+                          
+                            <!-- </div> -->
+                           
+                        <!-- </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -679,6 +706,7 @@
     <script src="{% static 'js/swiper.min.js' %}"></script>
     <!-- main js -->
     <script src="{% static 'js/main.js' %}"></script>
+
 </body>
 
 <!-- Mirrored from rstheme.com/products/html/khelo//client_page/home by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 04 Jan 2022 09:38:51 GMT -->

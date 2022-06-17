@@ -28,18 +28,20 @@ def index(request):
                                               'g': g, 't': t,
                                               'player': player,
                                               'team': team,
-                                              'orders':data,
-                                              'tournaments':data2})
+                                              'orders': data,
+                                              'tournaments': data2})
     else:
         return render(request, 'sign-in.html')
+
 
 def send_email(request):
     otp1 = random.randint(10000, 99999)
     e = request.POST['email']
     request.session['temail'] = e
-    obj = Users.objects.filter(email=e , is_admin=1).count()
+    obj = Users.objects.filter(email=e, is_admin=1).count()
     if obj == 1:
-        val = Users.objects.filter(email=e, is_admin=1).update(otp=otp1, otp_used=0)
+        val = Users.objects.filter(
+            email=e, is_admin=1).update(otp=otp1, otp_used=0)
         subject = 'OTP Verification from eSports Devices and Battles'
         message = str(otp1)
         email_from = settings.EMAIL_HOST_USER
@@ -62,16 +64,17 @@ def set_password(request):
 
     if tpassword == cpassword:
         e = request.session['temail']
-        val = Users.objects.filter(email=e, is_admin=1,otp=totp).count()
+        val = Users.objects.filter(email=e, is_admin=1, otp=totp).count()
 
         if val == 1:
-            val = Users.objects.filter(email=e, is_admin=1).update(otp_used=1,password=tpassword)
+            val = Users.objects.filter(email=e, is_admin=1).update(
+                otp_used=1, password=tpassword)
             return render(request, "sign-in.html")
         else:
             messages.error(request, "OTP does not match")
             return render(request, "reset_password.html")
     else:
-        return render(request,"reset_password.html")
+        return render(request, "reset_password.html")
 
 
 def login(request):
@@ -79,9 +82,10 @@ def login(request):
     if request.method == "POST":
         name = request.POST['u_name']
         pwd = request.POST['pwd']
-        val = Users.objects.filter(email=name, password=pwd, is_admin=1).count()
+        val = Users.objects.filter(
+            email=name, password=pwd, is_admin=1).count()
         if val == 1:
-            u = Users.objects.get(email=name,password=pwd, is_admin=1)
+            u = Users.objects.get(email=name, password=pwd, is_admin=1)
             request.session['a_uid'] = u.user_id
             request.session['a_uname'] = u.user_name
             request.session['a_username'] = name
@@ -92,7 +96,7 @@ def login(request):
             return render(request, "sign-in.html")
     else:
         return render(request, "sign-in.html")
-    
+
 
 def logout(request):
     try:
@@ -102,7 +106,7 @@ def logout(request):
     except:
         pass
 
-    return render(request,"sign-in.html")
+    return render(request, "sign-in.html")
 
 
 def select_user(request):
@@ -110,7 +114,7 @@ def select_user(request):
         data = Users.objects.all()
         return render(request, 'user_table.html', {"u": data})
     else:
-        return render(request,"sign-in.html")
+        return render(request, "sign-in.html")
 
 
 def select_category(request):
@@ -126,7 +130,7 @@ def select_product(request):
         data = Product.objects.all()
         return render(request, 'product_table.html', {"p": data})
     else:
-        return render(request,"sign-in.html")
+        return render(request, "sign-in.html")
 
 
 def select_order(request):
@@ -134,7 +138,7 @@ def select_order(request):
         data = reversed(Order.objects.all())
         return render(request, 'order_table.html', {"o": data})
     else:
-        return render(request,"sign-in.html")
+        return render(request, "sign-in.html")
 
 
 def select_payment(request):
@@ -142,7 +146,7 @@ def select_payment(request):
         data = Payment.objects.all()
         return render(request, 'payment_table.html', {"p": data})
     else:
-        return render(request,"sign-in.html")
+        return render(request, "sign-in.html")
 
 
 def select_feedback(request):
@@ -150,7 +154,15 @@ def select_feedback(request):
         data = Feedback.objects.all()
         return render(request, 'feedback_table.html', {"f": data})
     else:
-        return render(request,"sign-in.html")
+        return render(request, "sign-in.html")
+def training_guides(request):
+    if request.session.has_key('a_username'):
+
+        data = Training_Guide.objects.all()
+        return render(request,'training_guides.html')
+
+
+
 
 
 def select_game(request):
@@ -158,9 +170,11 @@ def select_game(request):
         data = Game.objects.all()
         return render(request, 'game_table.html', {"g": data})
     else:
-        return render(request,"sign-in.html")
+        return render(request, "sign-in.html")
 
 
+
+        
 def select_tournament(request):
     if request.session.has_key('a_username'):
         data = Tournament.objects.all()

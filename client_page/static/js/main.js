@@ -16,14 +16,27 @@
     // sticky menu
     var header = $('.menu-sticky');
     var win = $(window);
+    
     win.on('scroll', function() {
        var scroll = win.scrollTop();
-       if (scroll < 1) {
+       if (scroll < 20) {
            header.removeClass("sticky");
        } else {
            header.addClass("sticky");
+          
+            
        }
     });
+    var initialSrc = "../static/images/new_logo.png";
+var scrollSrc = "../static/images/scroll_logo.png";
+
+$(window).scroll(function() {
+   var value = $(this).scrollTop();
+   if (value > 100)
+      $(".logo").attr("src", scrollSrc);
+   else
+      $(".logo").attr("src", initialSrc);
+});
 
     // wow init
     new WOW().init();
@@ -366,3 +379,5 @@
     }
 	
 })(jQuery);
+
+
